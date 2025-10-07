@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📌Finder</title>
+    <link href="./bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">📌Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sections">Explore</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">All</a></li>
+                            <li><a class="dropdown-item" href="#Restaurant">🍽️Restaurants</a></li>
+                            <li><a class="dropdown-item" href="#Temple">🛕Temples</a></li>
+                            <li><a class="dropdown-item" href="#Park">🌳Parks</a></li>
+                            <li><a class="dropdown-item" href="#Pub">🍺Pubs</a></li>
+                            <li><a class="dropdown-item" href="#Cafe">☕Cafes</a></li>
+                            <li><a class="dropdown-item" href="#Theatre">🎭Theatres</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ratings</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="filterByRating(1)">⭐ 1 Star</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterByRating(2)">⭐ 2 Stars</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterByRating(3)">⭐ 3 Stars</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterByRating(4)">⭐ 4 Stars</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filterByRating(5)">⭐ 5 Stars</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#enquiry">Enquiry</a></li>
+                </ul>
+                <form class="d-flex flex-column flex-md-row mt-2 mt-md-0" role="search">
+                    <input class="form-control me-md-2 mb-2 mb-md-0" type="search" placeholder="Search location">
+                    <button class="btn btn-outline-light btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="home" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#home" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#home" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#home" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#home" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#home" data-bs-slide-to="5"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./restaurent carsoul.jpg" class="d-block w-100 carousel-img" alt="Restaurant">
+                <div class="carousel-caption">
+                    <h3>🍽️ Explore Local Restaurants</h3>
+                    <a href="#Restaurant" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./cafe carasoul.jpg" class="d-block w-100 carousel-img" alt="Cafe">
+                <div class="carousel-caption">
+                    <h3>☕ Discover Cozy Cafes</h3>
+                    <a href="#Cafe" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./temple carsoul.jpg" class="d-block w-100 carousel-img" alt="Temple">
+                <div class="carousel-caption">
+                    <h3>🛕 Visit Peaceful Temples</h3>
+                    <a href="#Temple" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./park carsoul.jpg" class="d-block w-100 carousel-img" alt="Park">
+                <div class="carousel-caption">
+                    <h3>🌳 Relax in Green Parks</h3>
+                    <a href="#Park" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./pub carsoul.jpg" class="d-block w-100 carousel-img" alt="Pub">
+                <div class="carousel-caption">
+                    <h3>🍺Groove in Vibrant Pubs</h3>
+                    <a href="#Temple" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./theatre carsoul.jpg" class="d-block w-100 carousel-img" alt="Theatre">
+                <div class="carousel-caption">
+                    <h3>🎭Enjoy Blockbusters in Theatres</h3>
+                    <a href="#Temple" class="btn btn-success">Explore</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4" id="sections">
+
+        <div class="section-title m-5 text-center" id="Restaurant">
+            <h3>🍽️ Restaurants</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ Spice Garden Bistro</h5>
+                        <p class="card-text">Serves flavorful Indian dishes with a modern twist.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ Urban Fork</h5>
+                        <p class="card-text">Trendy spot known for global fusion cuisine and cozy ambiance.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ The Curry Leaf</h5>
+                        <Authentic class="card-text">Authentic regional flavors served with homely warmth.</p>
+                            <div class="stars">⭐⭐⭐☆☆</div>
+                            <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ Grill & Glow</h5>
+                        <p class="card-text">Famous for its barbecue platters and rooftop dining.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ Savory Street</h5>
+                        <p class="card-text">A casual diner offering comfort food from around the world.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ Tandoor Trails</h5>
+                        <p class="card-text">Delight in smoky kebabs and traditional breads.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ The Olive Bowl</h5>
+                        <p class="card-text">Mediterranean-inspired meals in a serene setup.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./restaurent.jpg" class="card-img-top" alt="Restaurant">
+                    <div class="card-body">
+                        <h5 class="card-title">🍽️ Bite & Bloom</h5>
+                        <p class="card-text">A garden-style restaurant with farm-fresh ingredients.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title m-5 text-center" id="Cafe">
+            <h3>☕ Cafes</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Brew Haven Cafe</h5>
+                        <p class="card-text">Perfect for coffee lovers and cozy conversations.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Cocoa Cloud Cafe</h5>
+                        <p class="card-text">Known for its signature hot chocolate and pastries.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ The Reading Mug</h5>
+                        <p class="card-text">A quiet corner with books, coffee, and soft jazz.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Bean & Bloom</h5>
+                        <p class="card-text">Floral aesthetics meet aromatic brews here.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Mocha Tales</h5>
+                        <p class="card-text">A creative cafe blending art, desserts, and stories.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Espresso Lane</h5>
+                        <p class="card-text">The city’s favorite quick-stop for caffeine fixes.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Wanderlust Cafe</h5>
+                        <p class="card-text">Global flavors, travel decor, and a chill vibe.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./cafe.jpg" class="card-img-top" alt="Cafe">
+                    <div class="card-body">
+                        <h5 class="card-title">☕ Whispering Woods Cafe</h5>
+                        <p class="card-text">Surrounded by greenery, ideal for relaxed evenings.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title m-5 text-center" id="Temple">
+            <h3>🛕 Temples</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Golden Lotus Temple</h5>
+                        <p class="card-text">A peaceful sanctuary surrounded by lotus ponds.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Shivaananda Mandir</h5>
+                        <p class="card-text">Known for its towering gopuram and morning chants.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Sri Lakshmi Shrine</h5>
+                        <p class="card-text">Devotees visit for blessings of prosperity and calm.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Ananda Ashram</h5>
+                        <p class="card-text">A spiritual retreat for meditation and inner reflection.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Divine Steps Temple</h5>
+                        <p class="card-text">Ancient carvings and serene architecture mark this holy place.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Sunspire Mandir</h5>
+                        <p class="card-text">Famous for its sunrise prayers and golden dome.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Vishranti Temple</h5>
+                        <p class="card-text">Offers peace and positive energy amidst nature.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./temple.jpg" class="card-img-top" alt="Temple">
+                    <div class="card-body">
+                        <h5 class="card-title">🛕 Trinity Kovil</h5>
+                        <p class="card-text">A blend of tradition and devotion at the heart of the city.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title m-5 text-center" id="Park">
+            <h3>🌳Parks</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Central Park</h5>
+                        <p class="card-text">A sprawling urban oasis with walking trails and scenic lakes.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Riverside Park</h5>
+                        <p class="card-text">A Perfect for morning jogs along the tranquil riverbank.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Botanical Gardens</h5>
+                        <p class="card-text">A Explore colorful flora and beautifully landscaped gardens.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Hilltop Park</h5>
+                        <p class="card-text">A Enjoy panoramic city views from peaceful hilltop paths.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Adventure Park</h5>
+                        <p class="card-text">A Fun-filled playgrounds and activity zones for kids.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Heritage Park</h5>
+                        <p class="card-text">A historic park showcasing monuments and cultural spaces.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Lakeside Park</h5>
+                        <p class="card-text">A Ideal for picnics, boating, and sunset views.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./park.jpg" class="card-img-top" alt="Park">
+                    <div class="card-body">
+                        <h5 class="card-title">🌳 Eco Park</h5>
+                        <p class="card-text">A Promotes nature conservation with lush greenery and trails.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title m-5 text-center" id="Pub">
+            <h3>🍺Pubs</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 The Tipsy Barrel</h5>
+                        <p class="card-text">A cozy spot known for craft beers and live acoustic nights.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 Midnight Brew House</h5>
+                        <p class="card-text">Chill vibes, dim lights, and a wide range of international ales.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 The Rustic Tap</h5>
+                        <p class="card-text">Wooden interiors and local brews give this pub a countryside charm.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="1">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 Neon Nights Pub</h5>
+                        <p class="card-text">A vibrant party hub with DJs and neon-lit dance floors.</p>
+                        <div class="stars">⭐☆☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 The Drunken Leaf</h5>
+                        <p class="card-text">Relax with signature cocktails and garden seating under the stars.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 Brew & Beats</h5>
+                        <p class="card-text">A lively mix of music, friends, and freshly brewed pints.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 The Copper Mug</h5>
+                        <p class="card-text">Old-school charm meets modern flavors in this downtown favorite.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./pub.jpg" class="card-img-top" alt="Pub">
+                    <div class="card-body">
+                        <h5 class="card-title">🍺 Starlit Tavern</h5>
+                        <p class="card-text">Perfect for late-night talks and chilled mocktails with friends.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title m-5 text-center" id="Theatre">
+            <h3>🎭Theatres</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 Velvet Curtain Theatre</h5>
+                        <p class="card-text">Intimate performances with a touch of old-world elegance.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 StarGlobe Theatre</h5>
+                        <p class="card-text">A modern dome-style cinema offering 360° visual shows.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 Luxe Motion Theatre</h5>
+                        <p class="card-text">Plush recliners, gourmet snacks, and a luxury movie vibe.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 GrandView Theatre</h5>
+                        <p class="card-text">A classic cinema hall blending vintage design with modern sound.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="2">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 Silver Screen Studio</h5>
+                        <p class="card-text">Known for indie films and weekend cultural performances.</p>
+                        <div class="stars">⭐⭐☆☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="5">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 The Royal Stage</h5>
+                        <p class="card-text">Hosts musicals, dramas, and live orchestra nights.</p>
+                        <div class="stars">⭐⭐⭐⭐⭐ </div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="4">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 CineVerse Hall</h5>
+                        <p class="card-text">Experience movies in ultra-HD with immersive surround sound.</p>
+                        <div class="stars">⭐⭐⭐⭐☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4 card-item" data-rating="3">
+                <div class="card h-100">
+                    <img src="./theatre.jpg" class="card-img-top" alt="Theatre">
+                    <div class="card-body">
+                        <h5 class="card-title">🎭 Majestic Playhouse</h5>
+                        <p class="card-text">A heritage theatre celebrating art, dance, and storytelling.</p>
+                        <div class="stars">⭐⭐⭐☆☆</div>
+                        <a href="#" class="btn btn-success">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="category-btn" onclick="toggleMenu()"><i class="bi bi-list"></i></button>
+    <div class="category-menu" id="categoryMenu">
+        <a href="#Restaurant">🍽️Restaurants</a>
+        <a href="#Cafe">☕Cafes</a>
+        <a href="#Temple">🛕Temples</a>
+        <a href="#Park">🌳Parks</a>
+        <a href="#Pub">🍺Pubs</a>
+        <a href="#Theatre">🎭Theatres</a>
+    </div>
+
+    <section id="enquiry" class="bg-success text-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">📩 Get in Touch</h2>
+            <form class="bg-dark p-4 rounded">
+                <div class="mb-3"><input type="text" class="form-control" placeholder="Full Name" required></div>
+                <div class="mb-3"><input type="tel" class="form-control" placeholder="Phone Number" required></div>
+                <div class="mb-3"><input type="email" class="form-control" placeholder="Email Address" required></div>
+                <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Submit Enquiry</button>
+            </form><br>
+            <p class="text-center">©️ Karan 📌Finder 2025</p>
+        </div>
+    </section>
+
+    <script src="./function.js"></script>
+    <script src="./bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
